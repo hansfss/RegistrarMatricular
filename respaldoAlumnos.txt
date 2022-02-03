@@ -1,0 +1,13 @@
+23040226-4,Hans Folkesson,No_Tiene_Patrocinador,IC0019,Si,500000,15,TarjetaCredito
+10414718-6,Lance Hardwood,No_Tiene_Patrocinador,IC0012,Si,1000000,20,Cheque
+14185207-8,Good Ebening,Tiene_Patrocinador,6589314-2,IC0001,Si,900000,10,Pagaré
+21179425-9,jjjc djjj,No_Tiene_Patrocinador,IB0101,No,10,Pagaré
+19843601-1,poio poio,No_Tiene_Patrocinador,IC0001,No,25,TarjetaCredito
+21310060-2,zxczv hyuio,No_Tiene_Patrocinador,IB0202,No,30,Cheque
+19980384-0,asdfew  njkli,No_Tiene_Patrocinador,IC0012,No,20,Pagaré
+21511520-8, dddd kkkk,Tiene_Patrocinador,13109309-8,IC0019,No,28,Cheque
+21685848-4,zzzz xxxx,No_Tiene_Patrocinador,IC0001,No,32,TarjetaCredito
+12769360-9,wer rew,No_Tiene_Patrocinador,IB0202,Si,2000000,29,Pagaré
+9804106-0,lllll roeuw,No_Tiene_Patrocinador,IC0012,Si,1500000,20,TarjetaCredito
+21722382-2,qqqqqqq pppppp,Tiene_Patrocinador,8092139-K,IC0019,No,25,Pagaré
+18934662-K,aaaa ssss,Tiene_Patrocinador,13507149-8,IB0101,Si,800000,20,TarjetaCredito

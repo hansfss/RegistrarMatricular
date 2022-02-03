@@ -1,0 +1,5 @@
+IB0101,Administracion Moderna,3000000
+IB0202,Ingeniería Comercial,3500000
+IC0001,Ingeniería Civil Industrial,5000000
+IC0012,Ingeniería Civil Electrica,6000000
+IC0019,Ingeniería Civil Computación e Informatica,5500000

@@ -1,0 +1,73 @@
+            while(!adminsAtendiendo.isEmpty()){
+                if(!colaespera.isEmpty()){
+                    alumno = colaespera.remove();
+                    tiempoAlumno = alumno.getDuracion();
+                    formaPago = alumno.getFormaPago().toString();
+                    rutA = alumno.getRutAlumno().toString();
+                    nombre = alumno.getNombre();
+                    apoderado = alumno.getPatrocinador().toString();
+                    beca = alumno.getBeca().toString();
+                    
+            
+                    while(!carreras.isEmpty()){
+                        carrera = carreras.remove();
+                
+                        if(alumno.getCodigo().equals(carrera.getCodigo())){
+                            nombreCarrera = carrera.getNombreCarrera();
+                            monto = Integer.toString(carrera.getValor());
+                            codigo = carrera.getCodigo();
+                        }
+                        carrerasaux.add(carrera);
+                    }
+            
+                    while(!carrerasaux.isEmpty()){
+                        carrera = carrerasaux.remove();
+                        carreras.add(carrera);
+                    }   
+            
+                    while(!adminsAtendiendo.isEmpty()){
+                        admin = adminsAtendiendo.remove();
+                        tiempoAdmin = admin.getTiempo();
+                
+                        if(tiempoAlumno <= tiempoAdmin){
+                            tiempoAdmin = tiempoAdmin - tiempoAlumno;
+                            alumnoAtendido = new Administrativo(alumno.toString(),nombreCarrera,monto,formaPago);
+                            alumnosAtendidos.push(alumnoAtendido);
+                            adminTR = new Administrativo(tiempoAdmin);
+                            adminsAtendiendo.add(adminTR);
+                            atendidos.add(alumno); 
+                            montobecas.add(alumno);
+                        }
+                        else{
+                            tiempoAlumno = tiempoAlumno - tiempoAdmin;
+                            adminTerminado.add(admin);
+                            if(alumno.getPatrocinador().equals(Patrocinador.No_Tiene_Patrocinador) && alumno.getBeca().equals(Beca.No)){
+                                tiempoReducido = new Alumno(rutA,nombre,apoderado,codigo,beca,tiempoAlumno,formaPago);
+                                colaespera.addFirst(tiempoReducido);
+                            }
+                            else if(alumno.getPatrocinador().equals(Patrocinador.No_Tiene_Patrocinador) && alumno.getBeca().equals(Beca.Si)){
+                                montobeca = alumno.getMontoBeca();
+                                tiempoReducido = new Alumno(rutA,nombre,apoderado,codigo,beca,montobeca,tiempoAlumno,formaPago);
+                                colaespera.addFirst(tiempoReducido);
+                            }
+                            else if(alumno.getPatrocinador().equals(Patrocinador.Tiene_Patrocinador) && alumno.getBeca().equals(Beca.No)){
+                                rutP = alumno.getPatrocinador().toString();
+                                tiempoReducido = new Alumno(rutA,nombre,apoderado,rutP,codigo,beca,tiempoAlumno,formaPago);
+                                colaespera.addFirst(tiempoReducido); 
+                            }
+                            else{
+                                rutP = alumno.getPatrocinador().toString();
+                                montobeca = alumno.getMontoBeca();
+                                tiempoReducido = new Alumno(rutA,nombre,apoderado,rutP,codigo,beca,montobeca,tiempoAlumno,formaPago);
+                                colaespera.addFirst(tiempoReducido);
+                            }
+                        }
+                        break; 
+                    }
+                }
+                else{
+                    break;
+                }
+            }
+            this.txtAtendidos.append(alumnosAtendidos.toString() + "\n");
+            this.txtColaEspera.append(colaespera.toString() + "\n");
